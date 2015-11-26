@@ -48,27 +48,29 @@ class SensorDatasController extends AppController
 		'DataTypes',
             ),
         );
+       
         $sensor = TableRegistry::get('Sensors');
         /*
          * @todo finir cette fonction
-         * $sensor_id = $sensor->find('sensor',[
+         * 
+         *
+        $sensor_id = $sensor->find('sensor',[
             'sender'=> $sender_data,
             'type' => $type_data
                 ]);
+        var_dump($sensor_id);
          * 
          */
-        
-        
         $sensor_id = $sensor->find('all', $options);
+        
         $sensordataTable = TableRegistry::get('SensorDatas');
         $sensordata = $sensordataTable->newEntity();
         $sensordata->sensor_id = $sensor_id;
         $sensordata->value = $data['value'];
         if ($sensordataTable->save($sensordata)) {
         // L'entity $article contient maintenant l'id
-            $id = $sensordata->id;
-        }
-        
+            $id = $sensordata->id;      
+        }  
     }
 
     public $paginate = [

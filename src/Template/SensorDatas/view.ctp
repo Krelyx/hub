@@ -35,4 +35,5 @@
             <td><?= h($sensorData->modified) ?></tr>
         </tr>
     </table>
+
 </div>

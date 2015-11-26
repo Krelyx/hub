@@ -23,7 +23,8 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src"
+            "App\\": "src",
+            "GoogleCharts\\": "./plugins/GoogleCharts/src"            
         }
     },
     "autoload-dev": {
@@ -38,4 +39,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+    
 }

@@ -44,8 +44,9 @@ $cakeDescription = 'HUB by Xylerk';
             <ul class="left">
                 <li><a target="_blank"><?= $this->Html->link('Nodes', ['controller'=>'Nodes']);?></a></li>
                 <li><a target="_blank"><?= $this->Html->link('Data Types', ['controller'=>'DataTypes']);?></a></li>
-                <li><a target="_blank"><?= $this->Html->link('Sensors', ['controller'=>'Sensors']);?></a></li>
+                <li><a target="_blank"><?= $this->Html->link('Sensors', ['controller'=>'Sensors', 'action' => 'index']);?></a></li>
                 <li><a target="_blank"><?= $this->Html->link('Sensor Datas', ['controller'=>'SensorDatas']);?></a></li>
+                <li><a target="_blank"><?= $this->Html->link('Scenarios', ['controller'=>'Scenarios']);?></a></li>
             </ul>
             <ul class="right">
                 <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>

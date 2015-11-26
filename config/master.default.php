@@ -7,9 +7,8 @@
  */
 $config = array(
     'Master' => array(
-        'master_address' => 'http://127.0.0.1',
+        'master_address' => '127.0.0.1',
         'master_port' => '8888',
-        'master_location' => '/home/aurel/Master-plugins-master',
-        'master_scripts_location' => '/home/aurel/Master-plugins-master/bin/scripts',
+        'master_location' => '/path/to/the/master'
         )
 );

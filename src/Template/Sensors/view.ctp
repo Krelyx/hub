@@ -31,4 +31,27 @@
             <td><?= $this->Number->format($sensor->id) ?></td>
         </tr>
     </table>
+    <div class="related row">
+        <div class="column large-12">
+            <h4 class="subheader"><?= __('Related SensorDatas') ?></h4>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th><?= __('Created') ?></th>
+                    <th><?= __('Value') ?></th>
+                </tr>
+                <?php foreach ($sensordatas as $sensordata): ?>
+                    <tr>
+                        <td><?= h($sensordata->created) ?></td>
+                        <td><?= $this->Number->format($sensordata->value) . $symbol ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+
+        </div>
+        <h3><?= h($sensor->name) ?></h3>
+        <div class="myScatterChartJs">
+            <canvas id="myScatterChart" width="600" height="400"></canvas>
+        </div> 
+    </div>
 </div>
+            <?= $this->cell('Chart',['id' => $sensor->id]) ?>

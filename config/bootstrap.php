@@ -203,3 +203,6 @@ Type::build('date')->useLocaleParser();
 Type::build('datetime')->useLocaleParser();
 
 Plugin::load('Crud');
+Plugin::load('ChartJs', ['bootstrap' => false, 'routes' => false, 'autoload' => true]);
+Plugin::load('ScatterChartJs', ['bootstrap' => false, 'routes' => false, 'autoload' => true]);
+Plugin::load('GoogleCharts',['bootstrap' => false, 'routes' => false, 'autoload' => true]);

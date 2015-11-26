@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+require_once(ROOT.DS.'plugins'.DS.'GoogleCharts'.DS.'vendor'.DS.'GoogleCharts.php');
 
 /**
  * Application Controller
@@ -46,6 +47,42 @@ class AppController extends Controller
                 'Crud.ApiQueryLog'
             ]
         ]
+    ];
+    
+    public $helpers = [/*
+        'ChartJs.Chartjs' => [
+            'Chart' => [
+                'type' => 'line',
+            ],
+            'Canvas' => [
+                'position' => 'relative',
+                'width' => 950,
+                'height' => 400,
+                'css' => ['padding' => '10px'],
+            ],
+            'Options' => [
+                'responsive' => true,
+                'Line' => [
+                    'scaleShowGridLines' => false 
+                ]
+            ],
+        ],*/
+        'ScatterChartJs.ScatterChartjs' => [
+           /*
+            'Canvas' => [
+            
+                'position' => 'relative',
+                'width' => 950,
+                'height' => 400,
+                'css' => ['padding' => '10px'],
+            ],
+            * 
+            */
+            'Options' => [
+                'responsive' => true
+            ],
+        ],
+        'GoogleCharts.GoogleCharts'
     ];
     /**
      * Initialization hook method.
@@ -79,5 +116,6 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+        //$this->getView()->loadHelper('GoogleCharts.GoogleCharts');
     }
 }

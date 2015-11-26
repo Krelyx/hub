@@ -92,11 +92,32 @@ class SensorsTable extends Table
                     'conditions' => 'd.id = data_type_id'
                 ]
             ])
-            ->contain(['n.node_code =' => $options['sender']] and ['d.data_type =' => $options['type']])
-            ->first();    ;       
+            ->where([['n.node_code =' => $options['sender']], ['d.type =' => $options['type']]])
+            ->all()    ;
+       
     }
 
-
+    /*public function findSensor(Query $query, array $options)
+    {      
+        return $this->find()
+            ->select(['id'])
+            ->join([
+                'n' => [
+                    'table' => 'nodes',
+                    'type' => 'INNER',
+                    'conditions' => 'n.id = node_code_id'
+                ],
+                'd' => [
+                    'table' => 'data_types',
+                    'type' => 'INNER',
+                    'conditions' => 'd.id = data_type_id'
+                ]
+            ])
+            ->contain(['n.node_code =' => $options['sender']]and ['d.data_type =' => $options['type']])
+            ->first();    ;       
+    }
+     * 
+     */
 
 
 

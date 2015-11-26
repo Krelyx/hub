@@ -24,7 +24,7 @@ class NodesController extends AppController
         $node_code = $node['node_code'];
         $master_address = \Cake\Core\Configure::read('Master.master_address');
         $master_port = \Cake\Core\Configure::read('Master.master_port');
-        $address = $master_address.':'.$master_port.'/node/link?target='.$node_code.'&sender=0';
+        $address = $master_address.':'.$master_port.'/node/link?target='.$node_code.'&sender=1';
         $response = $http->get((string)$address);
         $this->Flash->success('Code sent');
         return $this->redirect(['action' => 'index']);
